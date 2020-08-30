@@ -1,7 +1,7 @@
 # proplike_3のREADME  
 
-### アプリ名  
-   <img width="256" alt="スクリーンショット 2020-08-08 20 49 22" src="https://user-images.githubusercontent.com/62422532/89709192-b90bf580-d9b8-11ea-9fe0-9e407e704dd0.png">　　
+### アプリ名  　
+   <img width="206" alt="スクリーンショット 2020-08-30 11 41 49" src="https://user-images.githubusercontent.com/62422532/91650211-bda76380-eab7-11ea-9279-71030c012078.png">
 
 ### 概要   
 ・不動産画像を投稿、一覧表示、編集、削除  
@@ -23,9 +23,13 @@ proplike_2は、新しい感覚の不動産サイトです。
  
 ### DEMO  
 
- ![](https://i.gyazo.com/f3d871c9df49601f7e406ceaf2483b36.gif)
+ [![Image from Gyazo](https://i.gyazo.com/e79703bde84e2cd3ff4d0351898849ac.gif)](https://gyazo.com/e79703bde84e2cd3ff4d0351898849ac)
+ 
+
+
+
    
-   
+
 ### 工夫したポイント  
 インスタグラムのようなデザインにしたことです。
 見た目や使い勝手が似ているため、利用者数の多いインスタグラムと同じような感覚でこのアプリを使用できます。
