@@ -34,7 +34,7 @@ proplike3は、新しい感覚の不動産サイトです。
 Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ### 課題や今後実装したい機能  
-デザインの変更、いいね機能
+星レビュー機能
 
 ### DB設計  
 
