@@ -42,22 +42,39 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 |------|----|-------|  
 |username|string|  
 |profile|text|  
-|profile_image_id|reference|null:false,foreign_key:true|  
+|profile_image_id|string|null:false,foreign_key:true|  
 |email|string|null:false,unique:true|  
 |password|string|null:false|  
 
 Association  
 
-- has_many:prop
+- has_many:prop  
+- has_many:like  
 
 #### プロップテーブル  
 |Column|Type|Options|  
 |------|----|-------|
-|user_id|reference|null:false,foreign_key:true|  
+|user_id|integer|null:false,foreign_key:true|  
 |title|string|  
 |body|text|  
 |image_id|string|  
 
 Association  
 
-- belongs_to:user
+- belongs_to:user  
+- has_many:like  
+
+#### ライクテーブル  
+|Column|Type|Options|  
+|------|----|-------|
+|user_id|integer|
+|prop_id|integer|
+
+Association  
+
+- belongs_to:user 
+- belongs_to:prop
+
+
+
+
