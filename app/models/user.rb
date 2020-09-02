@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :props, dependent: :destroy
+  has_many :likes, dependent: :destroy
   validates :username, presence: true 
   attachment :profile_image
+
+  def already_like?(prop)
+    self.likes.exists?(prop_id: prop.id)
+  end  
 end
