@@ -7,17 +7,24 @@
 ・不動産画像を投稿、一覧表示、編集、削除  
 ・ユーザーの登録、一覧表示、詳細表示、編集、削除  
 ・ログイン、ログアウト  
+・いいね機能
 
 ### 本番環境
 http://175.41.233.7/
 
 ### 制作背景   
+不動産会社時代にこんなアプリがあったらいいなと思ったものを作成しました。  
 物件情報登録の敷居を低くするために、インスタグラムのような感覚でアップできるアプリ、proplike3を作りました。   
 多くの不動産サイトは、登録が必須となる項目が多いです。  
 そのため、売買や賃貸希望の物件があっても、登録が手間でなにもせずそのままにしている不動産オーナーさんがいるはずです。  
 物件画像のアップだけでもいい、金額は載せなくてもいい、どんな情報を載せるかは不動産オーナーさん次第です。  
 インスタグラムが百貨店なら、proplike3は専門店です。  
-proplike3は、新しい感覚の不動産サイトです。  
+  
+アプリ名について  
+proplike3の『prop』は、物件などの意味を持つpropertyを略したもの、『like』は、いいね！の意味です。  
+『3』は、アルファベットだけの名前よりインパクトを加えたいことや、3の読みが「みっつ」であることから、思いや願いが叶うという意味の「満つ（みつ）」を意味しております。  
+ユーザーは様々な理由で物件情報を投稿されます。  
+ユーザーの思いが叶う、そんなアプリになってほしいとの思いから、proplike3と名付けました。  
  
 ### DEMO  
 
@@ -33,7 +40,7 @@ proplike3は、新しい感覚の不動産サイトです。
 Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ### 課題や今後実装したい機能  
-デザインの変更、いいね機能
+星レビュー機能
 
 ### DB設計  
 
@@ -42,22 +49,39 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 |------|----|-------|  
 |username|string|  
 |profile|text|  
-|profile_image_id|reference|null:false,foreign_key:true|  
+|profile_image_id|string|null:false,foreign_key:true|  
 |email|string|null:false,unique:true|  
 |password|string|null:false|  
 
 Association  
 
-- has_many:prop
+- has_many:prop  
+- has_many:like  
 
 #### プロップテーブル  
 |Column|Type|Options|  
 |------|----|-------|
-|user_id|reference|null:false,foreign_key:true|  
+|user_id|integer|null:false,foreign_key:true|  
 |title|string|  
 |body|text|  
 |image_id|string|  
 
 Association  
 
-- belongs_to:user
+- belongs_to:user  
+- has_many:like  
+
+#### ライクテーブル  
+|Column|Type|Options|  
+|------|----|-------|
+|user_id|integer|
+|prop_id|integer|
+
+Association  
+
+- belongs_to:user 
+- belongs_to:prop
+
+
+
+
