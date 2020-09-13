@@ -24,7 +24,7 @@
                 <p class="title is-4"><%= @prop.title %></p>
               </div>
               <div id="likes_buttons_<%= @prop.id %>">
-                <%= render partial: 'likes/like', locals: {prop: @prop} %>
+                <%= render partial: 'likes/showlike', locals: {prop: @prop} %>
               </div>
             </div>
             <div class="content">

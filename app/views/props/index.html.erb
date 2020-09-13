@@ -32,11 +32,19 @@
                   <div class="title"><%=link_to prop.user.username, user_path(prop.user) %></div>
                 </div>
               </div>
-              <div id="likes_buttons_<%= prop.id %>">
-                <%= render partial: 'likes/like', locals: {prop: prop} %>
-              </div>
+              <% if user_signed_in? %>
+                <div id="likes_buttons_<%= prop.id %>">
+                  <%= render partial: 'likes/indexlike', locals: {prop: prop} %>
+                </div>
+              <% else %>
+                <div id="likes_buttons_<%= prop.id %>">
+                  <% link_to prop_likes_path(prop) %>
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                  <%= prop.likes.count %>
+                </div>
+              <% end %>  
               <div class="content">
-                <time><%= prop.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+                  <time><%= prop.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
               </div>
             </div>
           </div>

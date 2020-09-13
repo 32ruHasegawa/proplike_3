@@ -1,0 +1,11 @@
+<% if current_user.already_like?(@prop) %>
+  <%= link_to prop_likes_path(@prop), method: :delete, remote: true do %>
+    <i class="fas fa-heart" aria-hidden="true"></i>
+  <% end %>
+  <%= @prop.likes.count %>
+<% else %>
+  <%= link_to prop_likes_path(@prop), method: :post, remote: true do %>
+    <i class="far fa-heart" aria-hidden="true"></i>
+  <% end %>
+  <%= @prop.likes.count %>
+<% end %>
