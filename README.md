@@ -28,8 +28,7 @@ proplike3の『prop』は、物件などの意味を持つpropertyを略した�
  [![Image from Gyazo](https://i.gyazo.com/e79703bde84e2cd3ff4d0351898849ac.gif)](https://gyazo.com/e79703bde84e2cd3ff4d0351898849ac)
    
 ### 本番環境
-http://175.41.233.7     
-(ユーザー名：admin, パスワード：2222)
+http://175.41.233.7   
 
 ### 工夫したポイント  
 インスタグラムのようなデザインにしたことです。
